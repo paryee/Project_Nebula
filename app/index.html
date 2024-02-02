@@ -1,0 +1,183 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Nebula App">
+    <meta name="author" content="Prince Aryee">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <title>Nebula App v1.0.0</title>
+  </head>
+
+  <body>
+    <header data-bs-theme="dark">
+      <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4>About</h4>
+              <p class="text-body-secondary">Project Nebula is an innovative initiative by Azubi Africa, aiming to empower students with hands-on experience in cloud technology, problem solving, and portfolio development skills. This project offers a unique platform for the student to engage in a real-world project, enhancing their understanding and proficiency in tech domains.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4>Contact</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#" class="text-white">Contact: 0247121554</a>
+                </li>
+                <li>
+                  <a href="#" class="text-white">LinkedIn: https://www.linkedin.com/in/prince-adama-aryee/</a>
+                </li>
+                <li>
+                  <a href="#" class="text-white">Email: prince.aryee@azubiafrica.org</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Nebula</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Student Dashboard</h1>
+            <p class="lead text-body-secondary">This dashboard shows the detailed information of a student. Kindly select the student name.</p>
+          </div>
+        </div>
+        <div class="col-lg-6" style="margin: 0 auto; display: flex; justify-content: center; align-items: center;">
+          <label for="name">Select a Student:</label>
+          <select id="name">
+            <option value="null"></option>
+          </select>
+          <div style="margin-left: 30px;">
+            <button id="clearSelectionButton" class="btn btn-secondary">Clear Selection</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      
+      <div class="border-top border-tertiary container" style="padding-top: 50px;">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="card shadow-sm" style="height:20rem">
+              <div class="card-body">
+                <div class="card-title text-center">
+                  <h6>Student Performance</h6>
+                </div>
+                <div class="col-12 mt-5">
+                  <div class="row gap-3">
+                    <div class="col-6 d-flex gap-3" style="width:90%;margin:0 auto;">
+                      <div class="info-l text-right" style="width:50%;text-align: right;">
+                        <div class="mb-2"> Name: </div>
+                        <div class="mb-2"> Cohort: </div>
+                        <div class="mb-2"> Email: </div>
+                        <div class="mb-2"> Attendance Average: </div>
+                        <div class="mb-2"> Assignment Completion: </div>
+                      </div>
+                      <div class="info-r" style="width:50%;text-align:left;">
+                        <div class="mb-2">
+                          <strong id="username"></strong>
+                        </div>
+                        <div class="mb-2">
+                          <strong class="mb-2" id="cohort"></strong>
+                        </div>
+                        <div class="mb-2">
+                          <strong class="mb-2" id="email"></strong>
+                        </div>
+                        <div class="mb-2">
+                          <strong class="mb-2" id="average"></strong>
+                        </div>
+                        <div class="mb-2">
+                          <strong class="mb-2" id="assignment"></strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card shadow-sm" style="height:20rem">
+              <div class="card-body">
+                <div class="card-title text-center">
+                  <h6>Ranking</h6>
+                </div>
+                <div class="col-12 mt-5">
+                  <div class="row gap-3">
+                    <div class="col-6 offset-md-6" style="text-align: right;">
+                      <strong id="">advisory message</strong>
+                    </div>
+                    <div class="col-12 " style="text-align: right;">
+                      <p id="">This is a chance to turn things around! "The way to get started is to quit talking and begin doing"- Walt Disney </p>
+                    </div>
+                    <div class="col-6 offset-md-6 " style="text-align: right;">
+                      <div class="d-flex justify-content-end">
+                        <h2>Ranking:</h2>
+                        <h2 id="ranking"></h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card shadow-sm" style="height:20rem">
+              <div class="card-body">
+                <div class="card-title text-center">
+                  <h6>Weekly Attendance</h6>
+                </div>
+                <div class="col-4 offset-md-2">
+                  <canvas id="weeklyAttendanceChart" width="250" height="250"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card shadow-sm" style="height:20rem">
+              
+              <div class="card-body">
+                <div class="card-title text-center">
+                  <h6>Assignment Completion</h6>
+                </div>
+                
+                <div class="col-4 offset-md-2">
+                  <canvas id="assignmentCompletionChart" width="250" height="250"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div></div></div>
+    </main>
+    <footer class="text-body-secondary py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">&copy; Nebula App</p>
+      </div>
+    </footer>
+
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
